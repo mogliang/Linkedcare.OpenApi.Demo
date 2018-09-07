@@ -28,6 +28,8 @@ namespace Linkedcare.OpenApi.Demo
             var syncDate = new DateTime(2000, 1, 1);
             var officeId = offices.Data[0].Id;
             var patients = proxy.GetPatients(new OfficeQueryInput { FromTime = syncDate, PageIndex = 1, OfficeId = officeId });
+
+            patients.Data.ForEach(p => Console.WriteLine(p.Name));
         }
     }
 }
